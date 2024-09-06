@@ -71,48 +71,46 @@ namespace linc {
             if (strchr(what, 'S')) {
 
                 if (dbg.source != NULL) {
-                    ar->__FieldRef(HX_CSTRING("source")) = ::String(dbg.source);
-                }
+    ar->__FieldRef(HX_CSTRING("source")) = ::String(dbg.source);
+}
 
                 if (dbg.short_src != NULL) {
-                    ar->__FieldRef(HX_CSTRING("short_src")) = ::String(dbg.short_src);
-                }
+    ar->__FieldRef(HX_CSTRING("short_src")) = ::String(dbg.short_src);
+}
 
-                if (dbg.linedefined != NULL) {
-                    ar->__FieldRef(HX_CSTRING("linedefined")) = (int)dbg.linedefined;
-                }
+                if (dbg.linedefined != 0) {  // Check for integers using 0 instead of NULL
+    ar->__FieldRef(HX_CSTRING("linedefined")) = (int)dbg.linedefined;
+}
 
-                if (dbg.lastlinedefined != NULL) {
-                    ar->__FieldRef(HX_CSTRING("lastlinedefined")) = (int)dbg.lastlinedefined;
-                }
+                if (dbg.lastlinedefined != 0) {  // Check for integers using 0 instead of NULL
+    ar->__FieldRef(HX_CSTRING("lastlinedefined")) = (int)dbg.lastlinedefined;
+}
 
                 if (dbg.what != NULL) {
-                    ar->__FieldRef(HX_CSTRING("what")) = ::String(dbg.what);
-                }
-
-            }
+    ar->__FieldRef(HX_CSTRING("what")) = ::String(dbg.what);
+}
 
             if (strchr(what, 'n')) {
                 if (dbg.name != NULL) {
-                    ar->__FieldRef(HX_CSTRING("name")) = ::String(dbg.name);
-                }
+        ar->__FieldRef(HX_CSTRING("name")) = ::String(dbg.name);
+    }
 
                 if (dbg.namewhat != NULL) {
-                    ar->__FieldRef(HX_CSTRING("namewhat")) = ::String(dbg.namewhat);
-                }
-            }
+        ar->__FieldRef(HX_CSTRING("namewhat")) = ::String(dbg.namewhat);
+    }
+}
 
             if (strchr(what, 'l')) {
-                if (dbg.currentline != NULL) {
-                    ar->__FieldRef(HX_CSTRING("currentline")) = (int)dbg.currentline;
-                }
-            }
+                if (dbg.currentline != 0) {  // Check for integers using 0 instead of NULL
+        ar->__FieldRef(HX_CSTRING("currentline")) = (int)dbg.currentline;
+    }
+}
 
             if (strchr(what, 'u')) {
-                if (dbg.nups != NULL) {
-                    ar->__FieldRef(HX_CSTRING("nups")) = (int)dbg.nups;
-                }
-            }
+                if (dbg.nups != 0) {  // Check for integers using 0 instead of NULL
+        ar->__FieldRef(HX_CSTRING("nups")) = (int)dbg.nups;
+    }
+}
 
             return ret;
 
