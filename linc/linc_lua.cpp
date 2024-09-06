@@ -289,9 +289,12 @@ namespace linc {
             lua_pushnil(L);
             lua_setglobal(L, name);
 
-        }
+            }
 
-    } //callbacks
+        } //callbacks
 
 
-} //linc
+    } //linc
+
+
+}
